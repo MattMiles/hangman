@@ -2,6 +2,7 @@ char *get_user();
 FILE *open_user_profile(char filename[]);
 void display_user_profile(char *user);
 void load_user_data(FILE *user_profile);
+void update_user_profile(char *user);
 
 unsigned int easy_wins = 0;
 unsigned int easy_losses = 0;
