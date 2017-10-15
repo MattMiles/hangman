@@ -1,2 +1,23 @@
-# hangman
-A Python script that reads a text file of possible solutions, rates them according to difficulty, and plays Hangman with the user. It adjusts for difficulty based on the user's performance, which is tracked in a unique profile generated for each user.
+# hangman - a program that persistently tracks user statistics & adjusts gameplay based on skill level
+
+This is a C-based program that plays Hangman, while tracking each individual user's performance and adjusting the difficulty of the challenge words as they play, based on their performance. Statistics are kept persistently in text files associated with the user and are used to calculate appropriate words from a given dictionary file.
+
+## Setting up the dictionary file
+
+These instructions will guide you on setting up the program to run on your system. Compile the program before you begin.
+
+This program requires a text file of words to be used for gameplay. This file must be a simple string of words separated by newline characters, as such:
+
+```
+foo
+bar
+baz
+```
+
+Name this file dictionary.txt and place it in the project's root directory.
+
+On startup, these words will be read and categorized as easy, medium, and hard, and be used as challenge words in the game.
+
+### License
+
+This project is licensed under the GNU General Public License 3.0 See the [license.md](license.md) for more details.
