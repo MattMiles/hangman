@@ -11,6 +11,7 @@ int play_hangman(char *word, int incorrects, char guesses[], int total_guesses) 
 
     if (incorrects >= 6) {
         printf("You lost.\n");
+        printf("The word was: %s\n", word);
         return -1;
     }
 
@@ -20,16 +21,16 @@ int play_hangman(char *word, int incorrects, char guesses[], int total_guesses) 
         return 1;
     }
 
-    scanf("%c", &guesses[total_guesses]);
-    total_guesses++;
-    if (!strchr(word, guesses[total_guesses])) {
+    scanf(" %c", &guesses[total_guesses]);
+    if (!strchr(word, guesses[total_guesses]))
         incorrects++;
-    }
+    total_guesses++;
 
     return play_hangman(word, incorrects, guesses, total_guesses);
 }
 
 int draw_board(char *word, char guesses[]) {
+    // tracks if lines were drawn
     int lines_drawn = 0;
 
     for (int i = 0; i < strlen(word); i++) {

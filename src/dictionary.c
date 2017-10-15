@@ -1,3 +1,5 @@
+#include <time.h>
+
 #include "dictionary.h"
 
 void initialize_dictionary(FILE *dictionary, dictionary_node *easy_root, dictionary_node *medium_root, dictionary_node *hard_root) {
@@ -18,7 +20,7 @@ void initialize_dictionary(FILE *dictionary, dictionary_node *easy_root, diction
         }
 
         float word_difficulty = (float) common_letters / uncommon_letters;
-        if (word_difficulty >= 1) {
+        if (word_difficulty >= 3) {
             current_easy->word = malloc(sizeof(buffer));
             strcpy(current_easy->word, buffer);
 
@@ -66,4 +68,35 @@ int is_common(char letter) {
         return 1;
     else
         return 0;
+}
+
+char *get_word(dictionary_node *easy_root, dictionary_node *medium_root, dictionary_node *hard_root, user player) {
+    dictionary_node *current = malloc(sizeof(dictionary_node));
+    srand(time(NULL));
+    if (strcmp(player.difficulty, "easy") == 0)
+        current = easy_root;
+    else if (strcmp(player.difficulty, "medium") == 0)
+        current = medium_root;
+    else
+        current = hard_root;
+
+    unsigned int loc = rand() % get_dictionary_length(current);
+
+    for (int i = 0; i < loc; i++) {
+        current = current->next;
+    }
+
+    return current->word;
+}
+
+int get_dictionary_length(dictionary_node *head) {
+    dictionary_node *current = head;
+    int count = 0;
+
+    while (current->next != NULL) {
+        current = current->next;
+        count++;
+    }
+
+    return count;
 }

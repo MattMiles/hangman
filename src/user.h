@@ -1,14 +1,17 @@
+typedef struct user {
+    char *username;
+    unsigned int easy_wins;
+    unsigned int easy_losses;
+    unsigned int medium_wins;
+    unsigned int medium_losses;
+    unsigned int hard_wins;
+    unsigned int hard_losses;
+    char *difficulty;
+    int progress;
+} user;
+
 char *get_user();
 FILE *open_user_profile(char filename[]);
-void display_user_profile(char *user);
-void load_user_data(FILE *user_profile);
-void update_user_profile(char *user);
-
-unsigned int easy_wins = 0;
-unsigned int easy_losses = 0;
-unsigned int medium_wins = 0;
-unsigned int medium_losses = 0;
-unsigned int hard_wins = 0;
-unsigned int hard_losses = 0;
-char difficulty[256];
-unsigned int won_in_a_row = 0;
+void display_user_profile(user player);
+user load_user_data(FILE *user_profile, user player);
+user update_user_profile(user player);
