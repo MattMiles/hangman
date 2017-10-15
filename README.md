@@ -20,4 +20,4 @@ On startup, these words will be read and categorized as easy, medium, and hard, 
 
 ### License
 
-This project is licensed under the GNU General Public License 3.0 See the [license.md](license.md) for more details.
+This project is licensed under the GNU General Public License 3.0 See the license for more details.
