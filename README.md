@@ -4,8 +4,6 @@ This is a C-based program that plays Hangman, while tracking each individual use
 
 ## Setting up the dictionary file
 
-These instructions will guide you on setting up the program to run on your system. Compile the program before you begin.
-
 This program requires a text file of words to be used for gameplay. This file must be a simple string of words separated by newline characters, as such:
 
 ```
