@@ -1,4 +1,4 @@
-# c-hangman - a program that persistently tracks user statistics & adjusts gameplay based on skill level
+# c-hangman - a game of Hangman that persistently tracks user statistics & adjusts gameplay based on skill level
 
 This is a C-based program that plays Hangman, while tracking each individual user's performance and adjusting the difficulty of the challenge words as they play, based on their performance. Statistics are kept persistently in text files associated with the user and are used to calculate appropriate words from a given dictionary file.
 
